@@ -144,5 +144,12 @@ def out(start,end):
    for n in range(end-start):
       for k in range(((n+start)/2).floor()-2):
          print( str(n+start) + " | " + str(k+3)+ " | " + str(conj(n+start,k+3)))
+def ask():
+   print("What is the smallest case to check?")
+   start= int(raw_input())
+   print("What is the biggest case to check?")
+   end = int(raw_input())+1
+   out(start,end)
 # The result: 
-out(6,8)
+#out(6,8)
+ask()
