@@ -1,9 +1,11 @@
 def secreps(lat1,lat2):
+""" Computes the intersection of two representatives of lattices."""
    global n
    global k
    return [(stats.IntList([lat1[j],lat2[j]]).max()) for j in range(binomial(n,k))]    
 
 def sec(v,w):
+""" Computes all the intersections of two lattices. """
    global n
    global k
    con = [v,w]
@@ -15,6 +17,7 @@ def sec(v,w):
    return [lat for lat in con if lat not in [v,w]]
 
 def same(v,w):
+""" Checks whether two lattices have the same homothety class. """
    global n
    global k
    minimum =  min(w[j]-v[j] for j in range(binomial(n,k)))
@@ -24,6 +27,7 @@ def same(v,w):
    return True
 
 def testconvex(lis,G):
+""" Checks whether a list of lattices is convex."""
    for tpl in Combinations(lis,2).list():
       for intersection in sec(G.get_vertex(tpl[0]),G.get_vertex(tpl[1])):
          if not any(same(intersection,t) for t in [G.get_vertex(v) for v in lis]):
@@ -31,6 +35,7 @@ def testconvex(lis,G):
    return True         
 
 def convex(G):
+""" Extends the graph of lattices, to the convex closure."""
    while testconvex(G.vertices(),G)==False:
       for tpl in Combinations(G.vertices(),2).list():
          i = 0
@@ -41,6 +46,7 @@ def convex(G):
                i=i+1              
  
 def gr(n,k):
+""" Defines the Graph of lattices for the convex closure of the wedgeproduct of the standard lattice chain."""
    global G
    G=graphs.EmptyGraph()
    for i in range(n):
@@ -60,6 +66,7 @@ def gr(n,k):
    return [vert1,vert2]       
 
 def conj(a,b):
+""" Falsifies the conjecture for the given parameters. """
    global n
    global k
    n=a
@@ -72,10 +79,10 @@ def conj(a,b):
       if condition(wl,binomial(n,k),n)==False:
          print(False)
          return wl       
-  # print(True)
    return True      	
 
 def kern(lambda1,lambda2):
+"""Computes the kernel of the map between two lattices."""
    w=Set([])
    maximaldiff =  max(lambda2[j]-lambda1[j] for j in range(binomial(n,k)))
    for j in range(binomial(n,k)):
@@ -84,7 +91,6 @@ def kern(lambda1,lambda2):
    return w
 
 
-# Defining the function checking the condition for the set of subsets:
 # def check(li,d,n):
 #   bol = True
 #   insec = Set(range(d))
@@ -116,6 +122,7 @@ def kern(lambda1,lambda2):
 #   return True  
 
 def condition(sset,d,n):
+"""Defining the function checking the condition for the set of subsets."""
   bol = False
   B=[]
   for i in range(n):
@@ -127,8 +134,9 @@ def condition(sset,d,n):
   return False         
 
 def iselement(li_1,li_2,d,n):
+""" Checks the containement of an element."""
   if not sum(li_1)==d-1:
-     return false   
+     return False   
   for I in Subsets(range(n)):
     if not I.is_empty():
       Wi=Set(range(d))
@@ -138,18 +146,20 @@ def iselement(li_1,li_2,d,n):
          return False
   return True  
 
-# Defining the function for creating an output:
 def out(start,end):
+""" Defining the function for creating an output. """
    print('n | k | Conjecture')
    for n in range(end-start):
       for k in range(((n+start)/2).floor()-2):
          print( str(n+start) + " | " + str(k+3)+ " | " + str(conj(n+start,k+3)))
 def ask():
+   """ Ask for the boundaries of the computations. """
    print("What is the smallest case to check?")
    start= int(raw_input())
    print("What is the biggest case to check?")
    end = int(raw_input())+1
    out(start,end)
+
+
 # The result: 
-#out(6,8)
 ask()
