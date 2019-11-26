@@ -1,0 +1,251 @@
+\documentclass[11pt,a4paper]{amsart}  
+
+\usepackage[a4paper]{geometry}
+\geometry{verbose,tmargin=3.0 cm,bmargin=3.0 cm,lmargin=2.5 cm,rmargin=2.5 cm}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+
+\usepackage{amsthm}
+\usepackage{amstext}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage[arrow, matrix, curve]{xy}
+\usepackage{enumitem} 
+\usepackage{color}
+\usepackage[hypertexnames=false]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{todo}
+\usepackage{mathdots}
+\usepackage{appendix}
+\usepackage{pdflscape}
+
+
+\usepackage{MnSymbol}
+
+\renewcommand{\labelenumi}{(\roman{enumi})}
+
+
+
+
+
+
+
+\newtheorem{prop}{Proposition}[section]
+\newtheorem{conj}{Conjecture}[section]
+\newtheorem{lemma}[prop]{Lemma}
+\newtheorem{corollary}[prop]{Corollary}
+\newtheorem{constr}[prop]{Construction}
+\newtheorem{thm}[prop]{Theorem}
+\newtheorem{example}[prop]{Example}
+
+\newtheorem*{thm*}{Theorem}
+\newtheorem*{prop*}{Proposition}
+\newtheorem*{definition*}{Definition}
+
+\newtheorem*{acknowledge}{Acknowledgements}
+
+\newtheorem{innercustomthm}{Theorem}
+\newenvironment{customthm}[1]
+  {\renewcommand\theinnercustomthm{#1}\innercustomthm}
+  {\endinnercustomthm}
+\newtheorem{innercustompro}{Proposition}
+\newenvironment{custompro}[1]
+  {\renewcommand\theinnercustompro{#1}\innercustompro}
+  {\endinnercustompro}
+
+\theoremstyle{definition}
+\newtheorem{definition}[prop]{Definition}
+\newtheorem*{ex}{Example}
+
+\theoremstyle{remark}
+\newtheorem{rem}[prop]{Remark}
+
+
+
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\Gm}{\mathbb{G}_m}
+\newcommand{\Projsp}{\mathbb{P}}
+\newcommand{\alc}{\mathrm{Alcov}}
+\newcommand{\alcn}{\mathrm{Alcov}_n}
+
+\newcommand{\rg}{\mathcal{O}}
+\newcommand{\res}{\kappa}
+\newcommand{\cres}{\overline{\kappa}}
+\newcommand{\unif}{\pi}
+\newcommand{\quot}{\mathrm{K}}
+
+\newcommand{\im}[1]{\mathrm{Im}(#1)}
+\newcommand{\iml}[2]{\mathrm{Im}_{#1}\left(#2\right)}
+
+\newcommand{\id}[1]{\mathrm{Id}_{ #1 }}
+\newcommand{\gln}{\mathrm{GL}_n}
+
+\newcommand{\affw}{W^{\mathrm{aff}}}
+\newcommand{\grz}{\mathrm{Gr}_{n,r}(\res)}
+\newcommand{\grs}{\mathrm{Gr}^{n,r}}
+\newcommand{\grg}{\mathrm{Gr}_{n,r}(\quot)}
+\newcommand{\grb}[1]{\widetilde{\mathrm{Gr}_{n,r}(\rg)}_{\leq #1}}
+\newcommand{\grzs}[1]{\mathrm{Gr}^{#1}(\res)}
+\newcommand{\grlat}[2]{\mathrm{Gr}^{#1}\left(#2\right)}
+\newcommand{\gr}[1]{\mathrm{Gr}^k\left({#1}\right)}
+
+\newcommand{\can}{\mathcal{M}}
+\newcommand{\cangoe}{\widetilde{\mathcal{G}}}
+\newcommand{\cangen}{\mathcal{G}}
+\newcommand{\cangenpl}{\cangen^{\mathrm{pl}}}
+\newcommand{\cangenstr}{\mathcal{S}}
+\newcommand{\cangenstrpl}{\mathcal{S}^{\mathrm{pl}}}
+
+\newcommand{\adm}{\mathrm{Adm}(\mu)}
+\newcommand{\set}[1]{[#1]}
+\newcommand{\sset}{\binom{[n]}{k}}
+
+\newcommand{\defeq}{\mathrel{\mathop:}=}
+\newcommand{\loc}{\mathcal{M}^{\text{loc}}}
+\newcommand{\glsec}[1]{\mathcal{O}_{#1}}
+
+\newcommand{\spec}[1]{\mathrm{Spec}\left(#1\right)}
+\newcommand{\bl}[2]{\mathrm{Bl}_{#1}\left(#2\right)}
+\newcommand{\proj}[1]{\mathrm{Proj}\left(#1\right)}
+\newcommand{\Bl}[2]{\mathrm{BL}_{#1}\left(#2\right)}
+\newcommand{\ini}[1]{\left(#1\right)^{\mathrm{in}}}
+\newcommand{\val}[1]{\mathfrak{v}\left(#1\right)}
+\newcommand{\degre}[1]{\mathrm{deg}\left(#1\right)}
+\newcommand{\tot}[1]{#1^{\mathrm{tot}}}
+\newcommand{\str}[1]{#1^{\mathrm{s}}}
+\newcommand{\mon}[1]{#1^{\mathrm{mon}}}
+\newcommand{\schu}[1]{X_{\{#1\}}}
+\newcommand{\sing}[1]{#1^{\mathrm{sing}}}
+\newcommand{\schuvar}[1]{X_{#1}}
+\newcommand{\schucell}[1]{\schuvar{#1}^\circ}
+
+\newcommand{\M}[1]{\mathcal{M}_{\Projsp}\left(#1\right)}
+\newcommand{\Mgr}[2]{\mathcal{M}_{\mathrm{Gr}^#1}\left(#2\right)}
+\newcommand{\aut}[1]{\mathrm{Aut}\left(#1\right)}
+\newcommand{\chn}{\mathcal{L}}
+
+\newcommand{\projectbar}[1]{\mathrm{\overline{\pr_{\Projsp}^{#1}}}}
+\newcommand{\projbar}{\mathrm{\overline{\pr_{\Projsp}}}}
+\newcommand{\project}[1]{\mathrm{\pr_{\Projsp}^{#1}}}
+\newcommand{\pr}{\mathrm{pr}}
+
+\newcommand{\projectbargr}[1]{\mathrm{\overline{\pr_{\mathrm{Gr}}^{#1}}}}
+\newcommand{\projbargr}{\mathrm{\overline{\pr_{\mathrm{Gr}}}}}
+\newcommand{\projectgr}[1]{\mathrm{\pr_{\mathrm{Gr}}^{#1}}}
+\newcommand{\muspro}[2]{\pr_{#1 , #2}}
+\newcommand{\musprol}[1]{\pr_{#1}}
+
+\newcommand{\basealcov}{\mathrm{a}_b}
+
+\newcommand\lt{[\hspace{-.12em}[ t ]\hspace{-.12em} ] } 
+\newcommand\lT{(\!( t )\!)}
+
+\title{A conjecture on irreducible components of certain Mustafin varieties}
+
+
+\begin{document}
+\maketitle
+It is of great interest to to specify an explicit bijection on the sets of irreducible components of $\M{\overline{\bigwedge^k\Gamma^{\mathrm{st}}}}_{\res}$ and $\M{{\bigwedge^k\Gamma^{\mathrm{st}}}}_{\res}$. This is done in the conjecture below.  
+  
+
+\begin{conj}
+\label{conj_convexcl_bijection}
+	We get a bijection
+	\begin{align*}
+		\left\{C\middle\vert C \text{ irr. component of } \M{\overline{\bigwedge^k\Gamma^{\mathrm{st}}}}_{\res} \right\}&\longrightarrow \left\{C\middle\vert C \text{ irr. component of } \M{\bigwedge^k\Gamma^{\mathrm{st}}}_{\res} \right\}\\
+		C & \longmapsto \projbar (C) 
+	\end{align*}
+	where $\projbar\colon \M{\overline{\bigwedge^k\Gamma^{\mathrm{st}}}}\rightarrow \M{\bigwedge^k\Gamma^{\mathrm{st}}}$ is the natural projection.
+\end{conj}
+
+\begin{rem}
+	It is well known that for an irreducible component $C$ of $\M{\bigwedge^k\Gamma^{\mathrm{st}}}_{\res}$ there exist a unique irreducible component $\overline{C}$ of $\M{\overline{\bigwedge^k\Gamma^{\mathrm{st}}}}_{\res}$ surjecting to $C$. Hence to prove the conjecture we just need to show that the images $\projbar (C)$ are irreducible components.
+\end{rem}
+
+As evidence for the conjecture we can calculate some cases of low dimensions and prove the following proposition. 
+
+\begin{prop}
+\label{prop_conj_k_2}
+	For $k=2$ Conjecture \ref{conj_convexcl_bijection} is true.
+\end{prop}
+
+The proof of this proposition will occupy us for the rest of this section therefore let us first indicate one important immediate consequence of the Conjecture. Furthermore we will describe a method to approach the conjecture in general before we prove the proposition.
+
+\begin{thm}
+   \label{thm_components_linear_subsp}
+	Assume Conjecture \ref{conj_convexcl_bijection}. Then we get a bijection
+	\begin{align*}
+		\left\{C\middle\vert C \text{ irr. component of } \M{\bigwedge^k\Gamma^{\mathrm{st}}}_{\res} \right\}&\longrightarrow \left\{\Projsp (V_I)\subseteq \Projsp(\bigwedge^k \Lambda_0)_{\res}\middle\vert I \in \binom{[n]}{k} \right\}\\
+		C & \longmapsto \project{0} (C)
+	\end{align*}
+	where $\project{0}\colon \M{\bigwedge^k\Gamma^{\mathrm{st}}}\rightarrow \Projsp(\bigwedge^k \Lambda_0)$ is the natural projection. 
+	And moreover for a linear subspace $\Projsp(V_I)$ for $I\in \binom{[n]}{k}$ the inverse image $(\project{0})^{-1}(\Projsp(V_I) )$ is the union $\bigcup_{J\leq I} C_J$ of irreducible components. 
+\end{thm}
+
+
+\begin{rem}
+	In \cite{AL17} a combinatorial method was described to compute dimensions of certain images of rational maps using a result by \cite{Li18}. To describe this method and the implication we want to use, we need the following setup. Note that we are using the dual notion of projective space compared to the reference.\\
+	Fix a finite set of lattice classes $\Gamma$ in $\quot^n$, an irreducible component $C$ of $\M{\Gamma}_{\res}$ and a class $[\Lambda]$ in $\Gamma$. Take a representative $\Lambda=\langle \unif^{m_I (\Lambda )} e_I \rangle$ of $[\Lambda]$ and a representative $\Lambda_C= \langle \unif^{m_I(\Lambda_C )}e_I\rangle$ of the class corresponding to the irreducible component $C$. Choose $\Lambda_C$ to be maximal with $\Lambda_C \subseteq\Lambda$. We define the subset 
+	\begin{align*}
+		W_{\Lambda}\defeq\{i\in[n]\vert m(\Lambda)_i-m(\Lambda_C )_i< \max\limits_{j\in [n]}\{m(\Lambda)_j-m(\Lambda_C )_j\} \}
+	\end{align*}  of $[n]$ and construct the set 
+	\begin{align*}
+		M(h,C)\defeq\{(a_\Lambda)_{[\Lambda]\in \Gamma}\in\N^{\Gamma}\vert \sum_{\Gamma}a_\Lambda =h\text{ and } n-\sum_{\Lambda\in  I}a_\Lambda > \sharp\bigcap_{\Lambda\in I}W_{\Lambda}\text{ for all subsets } \emptyset\neq I \subseteq\Gamma \}.
+	\end{align*} 
+	In the following proposition we describe how this combinatorial data encodes information of the image $\projbar (C)$.
+\end{rem}
+
+\begin{prop}(\cite{Li18} and  \cite[Theorem 2.18]{AL17})
+\label{prop_dimension_computed_with_subsets}
+	For a finite set of lattice classes $\Gamma$ and an irreducible component $C$ of $\M{\overline{\Gamma}}_{\res}$ the dimension of $\projbar (C)\subseteq \M{{\Gamma}}_{\res}$ is computed by
+	\begin{align*}
+		\dim(\projbar (C))= \max\{h\vert M(h,C)\neq \emptyset \}.
+	\end{align*} 
+\end{prop}
+
+\begin{rem}
+\label{rem_idea_proof_conjecture}
+	Let us take the time to explain an idea to approach Conjecture \ref{conj_convexcl_bijection} using the proposition above. Fix an irreducible component $C$ of $\M{\overline{\bigwedge^k\Gamma^{\mathrm{st}}}}$ and take the corresponding class $[\Lambda_C]$ in $\overline{\bigwedge^k\Gamma^{\mathrm{st}}}$. 
+%	First we recall that using Lemma \ref{lem_irr_comp_birational_map} the image of $C$ in $\M{\overline{\bigwedge^k\Gamma^{\mathrm{st}}}}_{\res}$ is clearly an irreducible component if $[\Lambda_C]$ is already in $\bigwedge^k\Gamma$. Hence we just have to check the cases where $\Lambda$ is in $\overline{\bigwedge^k\Gamma^{\mathrm{st}}}\setminus {\bigwedge^k\Gamma^{\mathrm{st}}}$.
+	 \\
+%	Now we can find a subset $\Gamma_C$ of $\bigwedge^k\Gamma^{\mathrm{st}}$ minimal such that $\overline{\Gamma_C}$ contains $[\Lambda_C]$. With out loss of generality we can further assume that the homothety class of $\bigwedge^k\Lambda_0$ is contained in $\Gamma_C$. By Lemma \ref{lem_irr_comp_birational_map} and Lemma \ref{lem_convex_irr_com_correspond_to_lattices} the image of $C$ in $\M{\Gamma_C}_{\res}$ is an irreducible component. And using Lemma \ref{lem_irr_comp_birational_map} again we see that the image of $C$ in $\M{\Gamma_C}_{\res}$ is an irreducible component if and only if the image in $\M{\bigwedge^k\Gamma^{\mathrm{st}}}_{\res}$ is an irreducible component. \\
+	But since the image of $C$ in $\M{\Gamma_C}$ is irreducible, it is an irreducible component if its dimension is $\binom{[n]}{k}-1$. Using Proposition \ref{prop_dimension_computed_with_subsets} this is equivalent to $M(\binom{[n]}{k}-1,C)$ not being empty for the set $\Gamma_C$ of lattice classes.\\
+	In general the sets $\Gamma_C$ can be difficult to determine, but for $k=2$ we have the following easy description. 
+	\end{rem}
+
+
+\begin{lemma}
+\label{lem_convex_closure_k_2}
+	For $[\Lambda]\in \overline{\bigwedge^2 \Gamma^{\mathrm{st}}}$ there are classes $[\Lambda_1]$ and $[\Lambda_2]$ in $\bigwedge^2 \Gamma^{\mathrm{st}}$ such that $[\Lambda]$ is in the convex closure $\overline{\left\{[\Lambda_1],[\Lambda_2]\right\}}$.
+\end{lemma}
+
+\begin{proof}
+	Take $[\Lambda]$ in $\overline{\bigwedge^2 \Gamma^{\mathrm{st}}}$ arbitrary. Then $\Lambda$ is of the form $\bigcap_{i\in I} \unif^{n_i}\bigwedge^2\Lambda_i$ for some $I\subseteq[n]$ and without loss of generality we have $0\in I$, $n_0=0$ and $n_i> 0$ for all $i\in I\setminus\{0\}$. Further assume that $I$ is minimal, i.e. $\Lambda$ is properly contained in $\bigcap_{i\in J} \unif^{n_i}\bigwedge^2\Lambda_i$ for all proper subsets $J\subset I$. Now we note that for all $i\in I$ we have $\unif^{n_i}\bigwedge^2\Lambda_i\subseteq \bigwedge^2\Lambda_0$ if $n_i\geq 2$. Using minimality of $I$ we conclude that $n_i=1$ for all $i\in I\setminus \{0\}$. But since $p \bigwedge^2\Lambda_i\subseteq \unif\bigwedge^2\Lambda_j$ for $i\leq j$ we again see by minimality of $I$ that $\sharp I\leq 2$.
+\end{proof}
+
+
+\begin{proof}[Proof of Proposition \ref{prop_conj_k_2} ]
+	Fix an irreducible component $C$ of $\M{\bigwedge^2\Gamma^{\mathrm{st}}}$. Following the idea described in Remark \ref{rem_idea_proof_conjecture} and Lemma \ref{lem_convex_closure_k_2} we just have to prove $M(\binom{n}{2}-1,C)\neq \emptyset$ for\linebreak $\Gamma=\left\{[\bigwedge^2 \Lambda_0],[\bigwedge^2\Lambda_i]\right\}$ for some $i\in [n]$.\\
+	But for $\unif\bigwedge^2 \Lambda_0\cap\bigwedge^2\Lambda_i=\langle \unif^{m^{i}_I}e_I\vert m^{i}_I= \max\{\sharp(I\cap [i]),1\} \rangle_{I\in \binom{[n]}{k} }$ hence $W_{\bigwedge^2\Lambda_0}= \left\{I\vert m^i_{I}>1 \right\}$ and $W_{\bigwedge^2\Lambda_i}= \left\{I\vert m^i_{I}<1 \right\}$. Now for $a_{\bigwedge^2 \Lambda_0}\defeq \sharp W_{\bigwedge^2 \Lambda_i}$ and $a_{\bigwedge^2 \Lambda_i}\defeq \sharp W_{\bigwedge^2 \Lambda_0}+ \sharp\left\{I\vert m^i_{I}=1 \right\}-1$ we have an element $(a_{\bigwedge^2 \Lambda_0},a_{\bigwedge^2 \Lambda_i})\in M(\binom{n}{2}-1,C)$.
+
+\end{proof}
+
+\bibliographystyle{alpha}
+\bibliography{literatur}
+
+\end{document}
